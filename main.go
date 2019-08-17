@@ -75,7 +75,7 @@ func main() {
 		case watch.Deleted:
 						log.Printf(" Pod %s deleted \n",pod.Name)
 
-		
+		}
 	}
 
 

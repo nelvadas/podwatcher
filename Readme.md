@@ -15,7 +15,7 @@ Create the demo namespace
 kubectl create ns demo
 ````
 
-Add ad pod in the namespace 
+Create a new  pod in the namespace 
 ````
 $ cat <<EOF  |  kubectl apply -f -
 > apiVersion: v1
@@ -36,10 +36,16 @@ $ cat <<EOF  |  kubectl apply -f -
 pod/busybox-pod created
 ````
 
-A the same time, the watcher sees the new pod and print a notification  
+or simply use the command ```kubectl create -f busybox.yml```
 
+A the same time, the watcher sees the new pod and print a log statement   
+
+```
 go run main.go -n demo
 Starting a Pod watcher in namespace [demo]
 2019/08/17 12:43:55  Pod busybox-pod added 
 ````
 
+Delete the created pod 
+````
+kubectl delete pod busybox-pod -n demo 
