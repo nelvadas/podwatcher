@@ -1,5 +1,5 @@
 
-# Using Kubernetes go-client 
+# Using Kubernetes Client-go 
 
 This project shows how to build a custom Pod watcher using kubernetes go-client.
 the controller watchs pod creation and deletion in a specific namespace and display a log statement accordingly
@@ -49,3 +49,12 @@ Starting a Pod watcher in namespace [demo]
 Delete the created pod 
 ````
 kubectl delete pod busybox-pod -n demo 
+`````
+
+In the watcher logs you can see a log statement like 
+````
+Starting a Pod watcher in namespace [demo]
+.....
+
+2019/08/17 13:11:15  Pod busybox-pod deleted
+````
